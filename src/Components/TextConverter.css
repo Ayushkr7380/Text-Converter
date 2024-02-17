@@ -18,7 +18,7 @@
     /* background-color: rgb(98, 98, 99); */
 }
 .Preview p{
- 
+    
     border-radius: 1vh;
     padding: 0vh 1vw;
     width: 25vw;
@@ -26,10 +26,6 @@
 .btn1 button{
     margin: .3vw;
 }
-/* .btn1{
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-} */
 /* .btn1 button{
     color: white;
     background-color: blue;
@@ -42,3 +38,17 @@
     border: .2px solid black;
     cursor: pointer;
 } */ 
+@media only screen and (max-width:768px) {
+    .btn1{
+        display: grid;
+        grid-template-columns: repeat(2,.1fr);
+    }
+    #text{
+        width:60vw;
+        height: 25vh;
+        font-size: larger;
+        padding: 1vh 1vw;
+        border-radius:2vh ;
+    }
+    
+}

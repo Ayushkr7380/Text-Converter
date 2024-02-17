@@ -95,11 +95,11 @@ const TextConverter = (props) => {
                 <textarea name="text" value={Text} onChange={changetextarea} id="text" cols="30" rows="10"></textarea>
             </div>
             <div className="btn1">
-            <button type="button" onClick={upperCase} className={`btn btn-${darkmode}`}>Capitalize</button>
-            <button type="button" onClick={lowerCase} className={`btn btn-${darkmode}`}>LowerCase</button>
-            <button type="button" onClick={First_upperCase} className={`btn btn-${darkmode}`}>CapitalizeFirstLetter</button>
-            <button type="button" onClick={Copy1} className={`btn btn-${darkmode}`}>Copy</button>
-            <button type="button" onClick={clearScreen} className={`btn btn-${darkmode}`}>ClearScreen</button>
+                <button type="button" onClick={upperCase} className={`btn btn-${darkmode}`}>Capitalize</button>
+                <button type="button" onClick={lowerCase} className={`btn btn-${darkmode}`}>LowerCase</button>
+                <button type="button" onClick={First_upperCase} className={`btn btn-${darkmode}`}>CapitalizeFirstLetter</button>
+                <button type="button" onClick={Copy1} className={`btn btn-${darkmode}`}>Copy</button>
+                <button type="button" onClick={clearScreen} className={`btn btn-${darkmode}`}>ClearScreen</button>
                 
             </div>
             <div className="MoreInfo">
