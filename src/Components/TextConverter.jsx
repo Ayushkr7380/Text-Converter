@@ -33,13 +33,26 @@ const TextConverter = (props) => {
         showalert('Light Mode has been enabled','success');
       }
     }
-    
+
+
+    const checktext = (msg) =>{
+      const t = document.getElementById('text');
+        if(t.value!==''){
+          showalert(msg,'success');
+        }
+      else{
+        showalert('Text is Empty','success');
+
+      }
+
+    }
     
     
     const upperCase = ()=>{
       let data = Text.toUpperCase();
       Settext(data);
-      showalert('Converted to Uppercase','success');
+      // showalert('Converted to Uppercase','success');
+      checktext('Converted to Uppercase');
     }
     
     const changetextarea =(e)=>{
@@ -48,23 +61,27 @@ const TextConverter = (props) => {
     
     const clearScreen =()=>{
       Settext('');
-      showalert('Screen is cleared','success');
+      // showalert('Screen is cleared','success');
+      checktext('Screen Cleared');
     }
     const lowerCase =()=>{
       let data = Text.toLowerCase();
       Settext(data);
-      showalert('Converted to Lowercase','success');
+      // showalert('Converted to Lowercase','success');
+      checktext('Converted to Lowercase');
     }
     const First_upperCase =()=>{
       let data = Text.charAt(0).toUpperCase() + Text.slice(1);
       Settext(data);
-      showalert('First Word Converted to Uppercase','success');
+      // showalert('First Word Converted to Uppercase','success');
+      checktext('First Word Converted to Uppercase');
     }
     const Copy1 = ()=>{
       let t = document.getElementById('text');
       t.select();
       navigator.clipboard.writeText(t.value); 
-      showalert('Copied to Clipboard','success');
+      checktext('Copied to clipboard');
+
     }
     const countcharacter=()=>{
       let numberofcharacter = Text.replace(/\s/g,'').length;
