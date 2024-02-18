@@ -1,51 +1,70 @@
 import { useState } from "react"
 import PropTypes from "prop-types";
 import './TextConverter.css'
+import Alert from "./Alert";
 
 
 const TextConverter = (props) => {
 
     const[Text,Settext] = useState('');
     const[darkmode,setdarkmode] = useState('primary');
+    const[alert,SetAlert] = useState(null);
+
+    const showalert = (message,type) =>{
+        SetAlert({
+          msg: message,
+          type : type
+        })
+        setTimeout(()=>{
+            SetAlert(null);
+        },1000);
+    }
 
     const enabledarkmode = ()=>{
       if(darkmode === 'primary'){
 
         setdarkmode('dark');
         document.body.style.backgroundColor='rgb(98, 98, 99)';
+        showalert('Dark Mode has been enabled','success');
       }
       else{
         document.body.style.backgroundColor='white';
         setdarkmode('primary');
+        showalert('Light Mode has been enabled','success');
       }
     }
-
+    
     
     
     const upperCase = ()=>{
-        let data = Text.toUpperCase();
-        Settext(data);
+      let data = Text.toUpperCase();
+      Settext(data);
+      showalert('Converted to Uppercase','success');
     }
-
+    
     const changetextarea =(e)=>{
-        Settext(e.target.value);
+      Settext(e.target.value);
     }
-
+    
     const clearScreen =()=>{
-        Settext('');
+      Settext('');
+      showalert('Screen is cleared','success');
     }
     const lowerCase =()=>{
-        let data = Text.toLowerCase();
-        Settext(data);
+      let data = Text.toLowerCase();
+      Settext(data);
+      showalert('Converted to Lowercase','success');
     }
     const First_upperCase =()=>{
-        let data = Text.charAt(0).toUpperCase() + Text.slice(1);
-        Settext(data);
+      let data = Text.charAt(0).toUpperCase() + Text.slice(1);
+      Settext(data);
+      showalert('First Word Converted to Uppercase','success');
     }
     const Copy1 = ()=>{
-        let t = document.getElementById('text');
-        t.select();
-        navigator.clipboard.writeText(t.value); 
+      let t = document.getElementById('text');
+      t.select();
+      navigator.clipboard.writeText(t.value); 
+      showalert('Copied to Clipboard','success');
     }
     const countcharacter=()=>{
       let numberofcharacter = Text.replace(/\s/g,'').length;
@@ -86,7 +105,7 @@ const TextConverter = (props) => {
               </div>
         </nav>
   
-
+        <Alert data={alert}/>
 
         <div className="main" style={
           {color: darkmode === 'dark'?'white':'black'}}>
