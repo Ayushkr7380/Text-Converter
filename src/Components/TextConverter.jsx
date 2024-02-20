@@ -152,8 +152,8 @@ const TextConverter = (props) => {
   )
 }
 
-TextConverter.PropTypes = {
-    title : PropTypes.string.isRequired
+TextConverter.propTypes = {
+    title1: PropTypes.string.isRequired
 }
 
 export default TextConverter
